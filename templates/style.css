@@ -1,0 +1,44 @@
+.ui.message {
+    position: relative;
+    min-height: 1em;
+    margin: 1em 0;
+    background: #F8F8F9;
+    padding: 1em 1.5em;
+    line-height: 1.4285em;
+    color: rgba(0,0,0,.87);
+    -webkit-transition: opacity .1s ease,color .1s ease,background .1s ease,box-shadow .1s ease;
+    transition: opacity .1s ease,color .1s ease,background .1s ease,box-shadow .1s ease;
+    border-radius: .28571429rem;
+    box-shadow: 0 0 0 1px rgba(34,36,38,.22) inset, 0 0 0 0 transparent;
+}
+
+.ui.message p {
+    opacity: .85;
+    margin: .75em 0;
+}
+
+.prescription-header {
+
+    color: white;
+    background-color: green;
+    font-weight: bold;
+    padding: 5px;
+    border-radius: 5px;
+}
+
+.issue {
+    font-weight: bold;
+}
+.solution {
+    color: green;
+    font-weight: bold;
+}
+.ui.centered.image, .ui.centered.images {
+    margin-left: auto;
+    margin-right: auto;
+}
+.ui.small.image, .ui.small.images .image, .ui.small.images img, .ui.small.images svg {
+    width: 150px;
+    height: auto;
+    font-size: .92857143rem;
+}

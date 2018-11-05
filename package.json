@@ -1,0 +1,22 @@
+{
+  "name": "templating-service",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Jaaren Sacharow",
+  "license": "ISC",
+  "dependencies": {
+    "amqp": "^0.2.6",
+    "amqplib": "^0.5.1",
+    "atob": "^2.0.3",
+    "ejs": "^2.5.7",
+    "inline-css": "^2.2.3",
+    "pg": "^7.4.0"
+  },
+  "devDependencies": {
+    "ejs-lint": "^0.3.0"
+  }
+}

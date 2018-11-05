@@ -1,0 +1,125 @@
+<html>
+    <head>
+        <style>
+            body {
+                font-family: Lato,'Helvetica Neue',Arial,Helvetica,sans-serif;
+            }
+            .dataContainer {
+                width: 1000px;
+            }
+               
+            .dataCountAnomalies {
+                color: black;
+                border-radius:5px;
+                border: 2px solid #CD5C40;
+                width: 20%;
+                float:left;
+                margin-right:5px;
+                text-align:center;
+            }
+            .dataCountAnomaliesHeader {
+                color:white;
+                background-color: #CD5C40;
+                padding:8px;
+            }
+            .prescriptions {
+                color: white;
+                border-radius: 15px 5px  10px 10px;
+                border: 2px solid #4C9117;
+                border-radius: 5px;
+            }
+            .headerPrescriptions {
+                color: white;
+                border-radius: 2px;
+                border: 2px solid #2EA021;
+                background-color: #2EA021;
+            }
+            .intermittent {
+                border: 2px solid #F30E0E;
+            }
+               
+            .headerIntermittent {
+                color: white;
+                border: 2px solid #F30E0E;
+                background-color: #F30E0E;
+            }
+               
+            .oneOff{
+                border: 2px solid #219AA0;
+                border-radius: 5px;
+            }
+               
+            .headerOneOff {
+                color: white;
+                border: 2px solid #219AA0;
+                background-color: #219AA0;
+            }
+               
+            .dataCount {
+                font-size: 5em;
+            }
+               
+            .waste {
+                font-size: 2em;
+            }
+           </style>
+       </head>
+       <body>
+            <div style="width:700px;">
+                <img src="https://static.entic.com/portal2/organization/hilton.png" height="75"/>
+            <div style="float:right;">
+                <img src="http://static.entic.com/portal2/organization/300/entic.jpg"  height="75" />
+            </div>
+            <div class="dataContainer">
+                <h4>Here is your report for The  <%= facility_code %> facility for the week from <%= start_date %> - <%= end_date %></h4>
+                <div class = "dataCountAnomalies">
+                    <div class="dataCountAnomaliesHeader">One Off</div>
+                    <div class="dataCount"><%= one_off_count %></div>
+                </div>
+                <div class = "dataCountAnomalies intermittent">
+                    <div class="dataCountAnomaliesHeader headerIntermittent">Constant</div>
+                    <div class="dataCount"><%= constant_count %> </div>
+                    </div> 
+                <div class = "dataCountAnomalies intermittent">
+                    <div class="dataCountAnomaliesHeader headerIntermittent">Intermittent</div>
+                    <div class="dataCount"><%= intermittent_count %></div>
+                </div>
+    
+                <div style="float:left; clear:both; margin-top:25px; width:100%">
+    
+                    <div class="dataContainer">
+                        <div class = "dataCountAnomalies">
+                            <div class="dataCountAnomaliesHeader">Closed/Open</div>
+                            <div class="dataCount waste"><%= closed_one_off_count %>/<%= one_off_count %></div>
+                        </div>
+                        <div class = "dataCountAnomalies intermittent">
+                            <div class="dataCountAnomaliesHeader headerIntermittent">Closed/Open</div>
+                            <div class="dataCount waste"><%= closed_constant_count %>/<%= constant_count %></div>
+                            </div>
+                        <div class = "dataCountAnomalies intermittent">
+                            <div class="dataCountAnomaliesHeader headerIntermittent">Closed/Open</div>
+                            <div class="dataCount waste"><%= closed_intermittent_count %>/<%= intermittent_count %></div>
+                        </div>
+                </div>
+    
+                </div>
+    
+                <div style="float:left; clear:both; margin-top:25px; width:100%">
+                    <div class="dataContainer">
+                        <div class = "dataCountAnomalies">
+                            <div class="dataCountAnomaliesHeader">Unrecovered Waste</div>
+                            <div class="dataCount waste">$<%= final_one_off_cost %></div>
+                        </div>
+                        <div class = "dataCountAnomalies intermittent">
+                            <div class="dataCountAnomaliesHeader headerIntermittent">Unrecovered Waste</div>
+                            <div class="dataCount waste">$<%= final_constant_cost %></div>
+                            </div>
+                        <div class = "dataCountAnomalies intermittent">
+                            <div class="dataCountAnomaliesHeader headerIntermittent">Unrecovered Waste</div>
+                            <div class="dataCount waste">$<%= final_intermittent_cost %></div>
+                        </div>
+                </div>
+                <div style="float:left; clear:both; margin-top:25px;">For more information, please visit your <a href="">portal</a>.</div>
+            </div>
+    </body>
+</html>

@@ -1,0 +1,311 @@
+<html>
+   <head>
+      <style>
+         body {
+         background-color: #ffffff;
+         font-family: sans-serif;
+         -webkit-font-smoothing: antialiased;
+         font-size: 14px;
+         line-height: 1.4;
+         margin: 0;
+         padding: 0;
+         -ms-text-size-adjust: 100%;
+         -webkit-text-size-adjust: 100%; }
+         table {
+         border-collapse: separate;
+         mso-table-lspace: 0pt;
+         mso-table-rspace: 0pt;
+         width: auto; }
+         table td {
+         font-family: sans-serif;
+         font-size: 14px;
+         vertical-align: middle; }
+         .body {
+         background-color: #ffffff;
+         width: 100%; }
+         /* Set a max-width, and make it display as block so it will automatically stretch to that width, but will also shrink down on a phone or something */
+         .container {
+         display: block;
+         Margin: 0 auto !important;
+         /* makes it centered */
+         max-width: 580px;
+         padding: 10px;
+         min-width: 580px; }
+         /* This should also be a block element, so that it will fill 100% of the .container */
+         .content {
+         box-sizing: border-box;
+         display: block;
+         Margin: 0 auto;
+         max-width: 580px;
+         padding: 10px; }
+         .consumption {
+         color:#13818d;
+         }
+         /* -------------------------------------
+         BUTTONS
+         ------------------------------------- */
+         .btn {
+         box-sizing: border-box;
+         width: 100%; }
+         .btn > tbody > tr > td {
+         padding-bottom: 15px; }
+         .btn table {
+         width: auto; }
+         .btn table td {
+         background-color: #ffffff;
+         border-radius: 5px;
+         text-align: center; }
+         .btn a {
+         background-color: #ffffff;
+         border: solid 1px #3498db;
+         border-radius: 5px;
+         box-sizing: border-box;
+         color: #3498db;
+         cursor: pointer;
+         display: inline-block;
+         font-size: 14px;
+         font-weight: bold;
+         margin: 0;
+         padding: 12px 25px;
+         text-decoration: none;
+         text-transform: capitalize; }
+         .btn-primary table td {
+         background-color: #3498db;
+         }
+         .btn-primary a {
+         background-color: #3498db;
+         border-color: #3498db;
+         color: #ffffff; }
+      </style>
+   </head>
+   <body>
+      <table border="0" cellpadding="0" cellspacing="0" class="body">
+         <tr>
+            <td>&nbsp;
+            </td>
+            <td class="container">
+               <table class="main">
+                  <tr>
+                     <td class="wrapper">
+                        <table border="0" cellpadding="0" cellspacing="0">
+                           <tr>
+                              <td>
+                                 <h3>Your daily report for <%= facilityName %>, for <%= yesterday %> </h3>
+                              </td>
+                           </tr>
+                           <tr>
+                              <td>
+                                 <!-- daily consumption header-->
+                                 <table>
+                                    <tr>
+                                       <td style="vertical-align:middle;">
+                                          <p style="font-size:45px;">&#127970;  &nbsp;&nbsp;</p>
+                                       </td>
+                                       <td style="vertical-align:middle;">
+                                          <h2 class="consumption">Daily Consumption</h2>
+                                       </td>
+                                    </tr>
+                                 </table>
+                                 <!-- end daily consumption header-->
+                              </td>
+                           </tr>
+                           <tr>
+                              <td>
+                                 <!-- KW consumption Section-->
+                                 <table>
+                                    <tr>
+                                       <td style="padding-left:15px; font-size:45px; vertical-align:middle;">
+                                          &#x26a1;
+                                       </td>
+                                       <td>
+                                          <!-- KW Yesterday datapoints -->
+                                          <table>
+                                             <tr>
+                                                <td style="text-align:center">
+                                                    <%= yesterDayFriendly %>
+                                                </td>
+                                             </tr>
+                                             <tr>
+                                                <td style="text-align:center;">
+                                                   <%= kWToday %>
+                                                </td>
+                                             </tr>
+                                          </table>
+                                          <!--  end KW Yesterday datapoints -->
+                                       </td>
+                                       <td>
+                                          <!-- KW   Day Before Yesterday datapoints -->
+                                          <table>
+                                             <tr>
+                                                <td style="text-align:center; width:90px;">
+                                                    <%= dayBeforeYesterdayFriendly %>
+                                                </td>
+                                             </tr>
+                                             <tr>
+                                                <td  style="text-align:center;">
+                                                   <%= kWYesterday %>
+                                                </td>
+                                                <td style="vertical-align:middle;">(kWH)</td>
+                                                <% if (kWChange == 'increase') { %>
+                                                    <td style="vertical-align:middle; font-weight:bold; font-size:14px;">&#x2191;</td>
+                                                <% } else { %>
+                                                    <td style="vertical-align:middle; font-weight:bold; font-size:14px;">&#x2193;</td>
+                                                <% } %>
+                                                <td style="vertical-align:middle;">
+                                                   <%= kWDifferencePercent %>%
+                                                </td>
+                                             </tr>
+                                          </table>
+                                          <!--  end KW DayBefore Yesterday datapoints -->
+                                       </td>
+                                    </tr>
+                                    <!-- end KW consumption Section-->
+                                    <!--water consumption section -->
+                                    <% if (hasWater == 'true') { %>
+                                        <tr>
+                                        <td style="padding-left:15px; font-size:45px; vertical-align:middle;">
+                                            &#x1f4a7;
+                                        </td>
+                                        <td>
+                                            <!-- water Yesterday datapoints -->
+                                            <table>
+                                                <tr>
+                                                    <td style="text-align:center;">
+                                                        <%= yesterDayFriendly %>
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <td style="text-align:center;">
+                                                    <%= waterToday %>
+                                                    </td>
+                                                </tr>
+                                            </table>
+                                            <!--  end water Yesterday datapoints -->
+                                        </td>
+                                        <td>
+                                            <!-- water   Day Before Yesterday datapoints -->
+                                            <table>
+                                                <tr>
+                                                    <td style="text-align:center; width:90px;">
+                                                        <%= dayBeforeYesterdayFriendly %>
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <td  style="text-align:center;">
+                                                    <%= waterYesterday %>
+                                                    </td>
+                                                    <td style="vertical-align:middle;">(Gallons)</td>
+                                                    <% if (waterChange == 'increase') { %>
+                                                        <td style="vertical-align:middle; font-weight:bold; font-size:14px;">&#x2191;</td>
+                                                    <% } else { %>
+                                                        <td style="vertical-align:middle; font-weight:bold;font-size:14px;">&#x2193;</td>
+                                                    <% } %>
+                                                    <td style="vertical-align:middle;">
+                                                    <%= waterDifferencePercent %>%
+                                                    </td>
+                                                </tr>
+                                            </table>
+                                            <!--  end Water DayBefore Yesterday datapoints -->
+                                        </td>
+                                        </tr>
+                                    <%  } else { %>
+                                        <tr>&nbsp;</tr>
+                                    <% } %>
+                                 </table>
+                              </td>
+                           </tr>
+                        </table>
+                     </td>
+                     <!--  end water consumption -->
+                  </tr>
+                  <!-- end consumption -->
+                  <tr>
+                     <td>
+                        <table>
+                           <tr>
+                              <td style="font-size:45px;"> &#x1f48a;  &nbsp;</td>
+                              <td class="consumption">
+                                 <h2>Prescriptions</h2>
+                              </td>
+                           </tr>
+                        </table>
+                        <table style="text-align: left;">
+                           <tr>
+                              <td style="padding:5px;">
+                                 <h4>New:</h4>
+                              </td>
+                              <td style="padding:5px;"> 
+                                 <h4><%= totalYesterdayPrescriptions %></h4>
+                              </td>
+                              <td style="padding:5px;">
+                                 <h4>Daily Waste:</h4>
+                              </td>
+                              <td style="padding:5px;">
+                                 <h4>$<%= totalYesterdayCosts %></h4>
+                              </td>
+                           </tr>
+                           <tr>
+                              <td style="padding:5px;">
+                                 <h4>Open:</h4>
+                              </td>
+                              <td style="padding:5px;">
+                                 <h4><%= totalOpenPrescriptions %></h4>
+                              </td>
+                              <td style="padding:5px; color:red;">
+                                 <h4>Cumulative Waste:</h4>
+                              </td>
+                              <td style="padding:5px; color:red;">
+                                 <h4>$<%= totalOpenCosts %></h4>
+                              </td>
+                           </tr>
+                           <tr>
+                              <td style="padding:5px;">
+                                 <h4>Closed:</h4>
+                              </td>
+                              <td style="padding:5px;">
+                                 <h4><%= totalClosedPrescriptions %></h4>
+                              </td>
+                              <td style="padding:5px; color:green";>
+                                 <h4>Total Savings:</h4>
+                              </td>
+                              <td style="padding:5px; color:green">
+                                 <h4>$<%= totalClosedCosts %></h4>
+                              </td>
+                           </tr>
+                        </table>
+                     </td>
+                  </tr>
+                  <tr>
+                     <td style="text-align:center;">
+                        <table border="0" cellpadding="0" cellspacing="0" class="btn btn-primary">
+                           <tbody>
+                              <tr>
+                                 <td>&nbsp;</td>
+                              </tr>
+                              <tr>
+                                 <td align="center">
+                                    <table border="0" cellpadding="0" cellspacing="0">
+                                       <tbody>
+                                          <tr>
+                                             <td> <a href="https://portal2.entic.com" target="_blank">View More on your portal</a> </td>
+                                          </tr>
+                                       </tbody>
+                                    </table>
+                                 </td>
+                              </tr>
+                              <tr>
+                                 <td class="content-block" style="color: #999999; font-family: sans-serif; font-size: 12px; padding-bottom: 10px; padding-top: 10px; text-align: center; vertical-align: top;"><span class="apple-link" style="color: #999999; font-size: 12px; text-align: center;">Entic, Inc, Miami | Boston | Panama Corporate Offices: (954) 391-7824 </span></td>
+                              </tr>
+                              <tr>
+                                 <td class="content-block powered-by" style="color: #999999; font-family: sans-serif; font-size: 12px; padding-bottom: 10px; padding-top: 10px; text-align: center; vertical-align: top;">Copyright &copy; 2017. Entic, Inc All rights reserved.</td>
+                              </tr>
+                           </tbody>
+                        </table>
+                     </td>
+                  </tr>
+               </table>
+            </td>
+         </tr>
+      </table>
+   </body>
+</html>

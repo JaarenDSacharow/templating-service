@@ -1,0 +1,90 @@
+<html>
+    <head>
+        <title><%= title %></title>
+        <style>
+            .ui.message {
+                position: relative;
+                min-height: 1em;
+                margin: 1em 0;
+                /* background: #F8F8F9; */
+                background: #ffffff;
+                padding: 1em 1.5em;
+                line-height: 1.4285em;
+                color: rgba(0,0,0,.87);
+                -webkit-transition: opacity .1s ease,color .1s ease,background .1s ease,box-shadow .1s ease;
+                transition: opacity .1s ease,color .1s ease,background .1s ease,box-shadow .1s ease;
+              	/*border: 1px solid blue; */
+                box-shadow: 0 0 0 1px rgba(34,36,38,.22) inset, 0 0 0 0 transparent;
+            }
+
+            .ui.message p {
+                opacity: .85;
+                margin: .75em 0;
+                
+            }
+
+            .prescription-header {
+
+                color: white;
+                background-color: green;
+                font-weight: bold;
+                padding: 8px;
+               
+            }
+
+            .description {
+                font-weight: bold;
+            }
+            .solution, .hourly_waste {
+                color: green;
+                font-weight: bold;
+            }
+            .ui.centered.image, .ui.centered.images {
+                margin-left: auto;
+                margin-right: auto;
+            }
+            .ui.small.image, .ui.small.images .image, .ui.small.images img, .ui.small.images svg {
+                width: 150px;
+                height: auto;
+                font-size: .92857143rem;
+            }
+        </style>
+    </head>
+    <body>
+       <img class="ui centered small image" src="http://static.entic.com/portal2/organization/300/entic.jpg">
+    <table class="prescription-header" width="100%">
+        <tbody>
+           <tr>
+               <td>New Prescription ( <%= ref_id %> ) for <%= facility_name %>: <%= alert_cause %></td>
+            </tr>
+        </tbody>
+    </table>
+        <div class="ui message">
+            <% for(var key in data_points){
+                newKey = key
+                value = data_points[key]
+                %>
+                <p class="<%= key %>">
+                    <% if (key.indexOf("_") != -1) {
+                        keyArray = key.split("_")
+                        newKey = keyArray[0].charAt(0).toUpperCase() + keyArray[0].slice(1) + " " + keyArray[1].charAt(0).toUpperCase() + keyArray[1].slice(1)
+                    }  else {
+                        newKey = key.charAt(0).toUpperCase() + key.slice(1)
+                    }%> 
+                    <% 
+                        if(key == 'cause' || key == 'solution') {
+                            newKey = "Possible " + key
+                        }
+                        if(key=='hourly_waste'){
+                            value = Number(value);
+                            value = "$" + value.toFixed(2)
+                        }
+                    %>
+                    <%= newKey %> : <%= value %>
+                </p>
+            <%} %>
+            <p><a href="http://portal3.entic-int.com/">View more on your portal</a></p>
+        </div>
+    </body>
+
+</html>

@@ -1,0 +1,211 @@
+<html>
+    <head>
+        <title><%= title %></title>
+        
+        <style>
+            ::selection {
+                background-color: #CCE2FF;
+                color: rgba(0,0,0,.87);
+            }
+            .ui.table {
+                width: 100%;
+                background: #FFF;
+                margin: 1em 0;
+                border: 1px solid rgba(34,36,38,.15);
+                box-shadow: none;
+                border-radius: .28571429rem;
+                text-align: left;
+                color: rgba(0,0,0,.87);
+                border-collapse: separate;
+                border-spacing: 0;
+                font-size: 1em;
+            }
+
+            .ui.purple.table {
+                border-top: .2em solid #A333C8;
+            }
+
+            .ui.table [class*="right aligned"], .ui.table[class*="right aligned"] {
+                text-align: right;
+            }
+
+            .ui.table tr:first-child td {
+                border-top: none;
+            }
+
+            .ui.compact.table td {
+                padding: .5em .7em;
+            }
+
+            td, th {
+                display: table-cell;
+                vertical-align: inherit;
+            }
+
+            .ui.red.label, .ui.red.labels .label {
+                background-color: #DB2828!important;
+                border-color: #DB2828!important;
+                color: #FFF!important;
+            }
+
+            .ui.grey.label, .ui.grey.labels .label {
+                background-color: #767676!important;
+                border-color: #767676!important;
+                color: #FFF!important;
+            }
+
+            .ui.icon.button>.icon, .ui.icon.buttons .button>.icon {
+                opacity: .9;
+                margin: 0!important;
+                vertical-align: top;
+            }
+            .ui.label {
+                display: inline-block;
+                line-height: 1;
+                vertical-align: baseline;
+                margin: 0 .14285714em;
+                background-color: #E8E8E8;
+                background-image: none;
+                padding: .5833em .833em;
+                color: rgba(0,0,0,.6);
+                text-transform: none;
+                font-weight: 700;
+                border: 0 solid transparent;
+                border-radius: .28571429rem;
+                -webkit-transition: background .1s ease;
+                transition: background .1s ease;
+            }
+
+            .ui.grey.button {
+                box-shadow: 0 0 0 0 rgba(34,36,38,.15) inset;
+            }
+
+            .ui.grey.button, .ui.grey.buttons .button {
+                background-color: #767676;
+                color: #FFF;
+                text-shadow: none;
+                background-image: none;
+            }
+
+            .ui.icon.button, .ui.icon.buttons .button {
+                padding: .78571429em;
+            }
+
+            .ui.mini.button, .ui.mini.buttons .button, .ui.mini.buttons .or {
+                font-size: .78571429rem;
+            }
+
+            .ui.button {
+                cursor: pointer;
+                display: inline-block;
+                min-height: 1em;
+                outline: 0;
+                border: none;
+                vertical-align: baseline;
+                background: #E0E1E2;
+                color: rgba(0,0,0,.6);
+                font-family: Lato,'Helvetica Neue',Arial,Helvetica,sans-serif;
+                margin: 0 .25em 0 0;
+                padding: .78571429em 1.5em;
+                text-transform: none;
+                text-shadow: none;
+                font-weight: 700;
+                line-height: 1em;
+                font-style: normal;
+                text-align: center;
+                text-decoration: none;
+                border-radius: .28571429rem;
+                box-shadow: 0 0 0 1px transparent inset, 0 0 0 0 rgba(34,36,38,.15) inset;
+                -webkit-user-select: none;
+                -moz-user-select: none;
+                -ms-user-select: none;
+                user-select: none;
+                -webkit-transition: opacity .1s ease,background-color .1s ease,color .1s ease,box-shadow .1s ease,background .1s ease;
+                transition: opacity .1s ease,background-color .1s ease,color .1s ease,box-shadow .1s ease,background .1s ease;
+                will-change: '';
+                -webkit-tap-highlight-color: transparent;
+            }
+        </style>
+    </head>
+    <body>
+        <p>Here is your custom report <%= name %></p>
+        <div class="sixteen wide column">
+            <table class="ui purple compact table">
+                <thead>
+                    <tr> 
+                        <th colspan="7">
+                            Electric
+                        </th>
+                        <tr class="right aligned"></tr>
+                        <th></th>
+                        <th>Average
+                            <div class="ui sub header">Past 30 Days</div>
+                        </th>
+                        <th>Prior</th>
+                        <th>Prior
+                            <div class="ui sub header">vs Average</div>
+                        </th>
+                        <th>Yesterday
+                            <div class="ui sub header">vs Average</div>
+                        </th>
+                        <th>Trending
+                            <div class="ui sub header">Chart</div>
+                        </th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr class="right aligned">
+                        <td class="left aligned">Cooling Degree Days</td>
+                        <td>15.28° F</td>
+                        <td>6.18° F</td>
+                        <td> 
+                            <div class="ui red medium label">0.91° F</div>
+                        </td>
+                        <td>14.25° F</td>
+                        <td>
+                            <div class="ui grey medium label")>-1.02° F</div> 
+                        </td>
+                        <td>
+
+                        </td>
+                    </tr>
+                </tbody>
+                <tbody>
+                        <tr class="right aligned">
+                            <td class="left aligned">Cooling Degree Days</td>
+                            <td>15.28° F</td>
+                            <td>6.18° F</td>
+                            <td>
+                                <div class="ui grey medium label">0.91° F</div>
+                            </td>
+                            <td>14.25° F</td>
+                            <td>
+                                <div class="ui grey medium label">-1.02° F</div>
+                            </td>
+                            <td>
+
+                            </td>
+
+                        </tr>
+                </tbody>
+                <tbody>
+                        <tr class="right aligned">
+                            <td class="left aligned">Heating Degree Days</td>
+                            <td>0.00° F</td>
+                            <td>0.00° F</td>
+                            <td>
+                                <div class="ui grey medium label">0.00° F</div>
+                            </td>
+                            <td>0.00° F</td>
+                            <td>
+                                <div class="ui grey medium label">0.00° F</div>
+                            </td>
+                            <td>
+
+                            </td>
+                        </tr>
+                </tbody>
+            </table>
+        </div>
+    </body>
+</html>

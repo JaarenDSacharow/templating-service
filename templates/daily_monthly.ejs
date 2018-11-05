@@ -1,0 +1,248 @@
+<html>
+    <head>
+        <title><%= title %></title>
+        <style>
+            body {
+                margin: 0;
+                padding: 0;
+                overflow-x: hidden;
+                min-width: 320px;
+                background: #FFF;
+                font-family: Lato,'Helvetica Neue',Arial,Helvetica,sans-serif;
+                font-size: 14px;
+                line-height: 1.4285em;
+                color: rgba(0,0,0,.87);
+                font-smoothing: antialiased;
+            }
+            .ui.purple.table {
+                border-top: .2em solid #A333C8;
+            }
+            .ui.table:last-child {
+                margin-bottom: 0;
+            }
+            .ui.table:first-child {
+                margin-top: 0;
+            }
+            .ui.table {
+                font-size: 1em;
+            }
+            .ui.table {
+                width: 100%;
+                background: #FFF;
+                margin: 1em 0;
+                border: 1px solid rgba(34,36,38,.15);
+                box-shadow: none;
+                border-radius: .28571429rem;
+                text-align: left;
+                color: rgba(0,0,0,.87);
+                border-collapse: separate;
+                border-spacing: 0;
+            }
+            .ui.table thead {
+                box-shadow: none;
+            }
+            .ui.table thead th {
+                cursor: auto;
+                background: #F9FAFB;
+                text-align: inherit;
+                color: rgba(0,0,0,.87);
+                padding: .92857143em .78571429em;
+                vertical-align: inherit;
+                font-style: none;
+                font-weight: 700;
+                text-transform: none;
+                border-bottom: 1px solid rgba(34,36,38,.1);
+                border-left: none;
+            }
+            thead {
+                display: table-header-group;
+                vertical-align: middle;
+                border-color: inherit;
+            }
+            tr {
+                display: table-row;
+                vertical-align: inherit;
+                border-color: inherit;
+            }
+            .ui.column.grid>[class*="sixteen wide"].column, .ui.grid>.column.row>[class*="sixteen wide"].column, .ui.grid>.row>[class*="sixteen wide"].column, .ui.grid>[class*="sixteen wide"].column {
+                width: 100%!important;
+            }
+            .ui.red.label, .ui.red.labels .label {
+                background-color: #DB2828!important;
+                border-color: #DB2828!important;
+                color: #FFF!important;
+            }
+            .ui.grey.label, .ui.grey.labels .label {
+                background-color: #767676!important;
+                border-color: #767676!important;
+                color: #FFF!important;
+            }
+            .ui.label {
+                display: inline-block;
+                line-height: 1;
+                vertical-align: baseline;
+                margin: 0 .14285714em;
+                background-color: #E8E8E8;
+                background-image: none;
+                padding: .5833em .833em;
+                color: rgba(0,0,0,.6);
+                text-transform: none;
+                font-weight: 700;
+                border: 0 solid transparent;
+                border-radius: .28571429rem;
+                -webkit-transition: background .1s ease;
+                transition: background .1s ease;
+            }
+
+        </style>
+    </head>
+    <body>
+        <table class="ui purple compact table">
+            <thead class="">
+                <tr class="">
+                    <th colspan="7" class="">Electric</th>
+                </tr><tr class="right aligned">
+                    <th class=""></th>
+                    <th class=""><!-- react-text: 488 -->Average<!-- /react-text -->
+                        <div class="ui sub header">past 30 days</div>
+                    </th>
+                    <th class="">Prior</th>
+                    <th class=""><!-- react-text: 492 -->Prior<!-- /react-text -->
+                        <div class="ui sub header">vs Average</div>
+                    </th>
+                    <th class="">Yesterday</th>
+                    <th class=""><!-- react-text: 496 -->Yesterday<!-- /react-text -->
+                        <div class="ui sub header">vs Average</div>
+                    </th>
+                    <th class=""><!-- react-text: 499 -->Trending<!-- /react-text -->
+                        <div class="ui sub header">Chart</div>
+                    </th>
+                </tr>
+            </thead>
+            <tbody class="">
+                <tr class="right aligned">
+                    <td class="left aligned"><!-- react-text: 660 -->Cooling Degree Days<!-- /react-text --></td>
+                    <td class="">0.01° F</td>
+                    <td class="">0.00° F</td>
+                    <td class="">
+                        <div class="ui grey medium label">-0.01° F</div>
+                    </td>
+                    <td class="">0.00° F</td>
+                    <td class="">
+                        <div class="ui grey medium label">-0.01° F</div>
+                    </td>
+                    <td class="">
+                        <button class="ui grey mini icon button">
+                            <i aria-hidden="true" class="line chart icon"></i>
+                        </button>
+                    </td>
+                </tr>
+            </tbody>
+            <tbody class="">
+                <tr class="right aligned">
+                    <td class="left aligned"><!-- react-text: 674 -->Heating Degree Days<!-- /react-text --></td>
+                    <td class="">9.61° F</td><td class="">19.63° F</td>
+                    <td class="">
+                        <div class="ui red medium label">10.02° F</div>
+                    </td>
+                    <td class="">22.09° F</td>
+                    <td class="">
+                        <div class="ui red medium label">12.48° F</div>
+                    </td>
+                    <td class="">
+                        <button class="ui grey mini icon button">
+                            <i aria-hidden="true" class="line chart icon"></i>
+                        </button>
+                    </td>
+                </tr>
+            </tbody>
+            <tbody class="">
+                <tr class="right aligned">
+                    <td class="left aligned">
+                        <i aria-hidden="true" class="caret right link icon"></i>
+                        <!-- react-text: 689 -->Whole Day<!-- /react-text -->
+                    </td>
+                    <td class="">0.00 Kwh</td>
+                    <td class="">0.00 Kwh</td>
+                    <td class="">
+                        <div class="ui grey medium label">0.00 Kwh</div>
+                    </td>
+                    <td class="">0.00 Kwh</td>
+                    <td class="">
+                        <div class="ui grey medium label">0.00 Kwh</div>
+                    </td>
+                    <td class="">
+                        <button class="ui grey mini icon button">
+                            <i aria-hidden="true" class="line chart icon"></i>
+                        </button>
+                    </td>
+                </tr>
+            </tbody>
+            <tbody class="">
+                <tr class="right aligned">
+                    <td class="left aligned">
+                        <i aria-hidden="true" class="caret right link icon"></i>
+                        <!-- react-text: 704 -->Early Morning (12 am to 8 am)<!-- /react-text -->
+                    </td>
+                    <td class="">0.00 Kwh</td>
+                    <td class="">0.00 Kwh</td>
+                    <td class="">
+                        <div class="ui grey medium label">0.00 Kwh</div>
+                    </td>
+                    <td class="">0.00 Kwh</td>
+                    <td class="">
+                        <div class="ui grey medium label">0.00 Kwh</div>
+                    </td>
+                    <td class="">
+                        <button class="ui grey mini icon button">
+                            <i aria-hidden="true" class="line chart icon"></i>
+                        </button>
+                    </td>
+                </tr>
+            </tbody>
+            <tbody class="">
+                <tr class="right aligned">
+                    <td class="left aligned">
+                        <i aria-hidden="true" class="caret right link icon"></i>
+                        <!-- react-text: 719 -->Daytime (8 am to 6 pm)<!-- /react-text --></td>
+                        <td class="">0.00 Kwh</td>
+                        <td class="">0.00 Kwh</td>
+                        <td class="">
+                            <div class="ui grey medium label">0.00 Kwh</div>
+                        </td>
+                        <td class="">0.00 Kwh</td>
+                        <td class="">
+                            <div class="ui grey medium label">0.00 Kwh</div>
+                        </td>
+                        <td class="">
+                            <button class="ui grey mini icon button">
+                                <i aria-hidden="true" class="line chart icon"></i>
+                            </button>
+                        </td>
+                    </tr>
+                </tbody>
+                <tbody class="">
+                    <tr class="right aligned">
+                        <td class="left aligned">
+                            <i aria-hidden="true" class="caret right link icon"></i>
+                            <!-- react-text: 734 -->Night (6 pm to 12 am)<!-- /react-text -->
+                        </td>
+                        <td class="">0.00 Kwh</td>
+                        <td class="">0.00 Kwh</td>
+                        <td class="">
+                            <div class="ui grey medium label">0.00 Kwh</div>
+                        </td>
+                        <td class="">0.00 Kwh</td>
+                        <td class="">
+                            <div class="ui grey medium label">0.00 Kwh</div>
+                        </td>
+                        <td class="">
+                            <button class="ui grey mini icon button">
+                                <i aria-hidden="true" class="line chart icon"></i>
+                            </button>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+    </body>
+</html>
